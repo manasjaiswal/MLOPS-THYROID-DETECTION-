@@ -1,0 +1,106 @@
+categorical_columns:
+- sex
+- On_thyroxine
+- QThroxine
+- medication
+- sick
+- pregnant
+- surgery
+- I131_treatment
+- Qhypo
+- Qhyper
+- Lithium
+- Goitre
+- Tumor
+- Hypopitutary
+- psch
+- TSH_BOOL
+- T3_BOOL
+- TT4_BOOL
+- T4U_BOOL
+- FTI_BOOL
+- TBG_BOOL
+- source
+categories:
+  FTI_BOOL:
+  - t
+  - f
+  Goitre:
+  - f
+  - t
+  Hypopitutary:
+  - f
+  - t
+  I131_treatment:
+  - f
+  - t
+  Lithium:
+  - f
+  - t
+  On_thyroxine:
+  - f
+  - t
+  QThroxine:
+  - f
+  - t
+  Qhyper:
+  - f
+  - t
+  Qhypo:
+  - f
+  - t
+  T3_BOOL:
+  - t
+  - f
+  T4U_BOOL:
+  - t
+  - f
+  TBG_BOOL:
+  - f
+  TSH_BOOL:
+  - t
+  - f
+  TT4_BOOL:
+  - t
+  - f
+  Tumor:
+  - f
+  - t
+  medication:
+  - f
+  - t
+  pregnant:
+  - f
+  - t
+  psch:
+  - f
+  - t
+  sex:
+  - F
+  - M
+  sick:
+  - t
+  - f
+  source:
+  - other
+  - STMW
+  - SVI
+  - SVHD
+  - SVHC
+  surgery:
+  - f
+  - t
+numerical_columns:
+- age
+- TSH
+- T3
+- TT4
+- T4U
+- FTI
+- TBG
+target_column: class
+class_categories:
+  T3 toxic: 2
+  goitre: 3
+  hyperthyroid: 1
+  negative: 0 
