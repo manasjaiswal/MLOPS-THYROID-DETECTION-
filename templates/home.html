@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thyroid Predictor</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+</head>
+<body class="back">
+    <div class="heading">
+        <img class="one" src="https://th.bing.com/th/id/OIP.C762YPAp55Ve_6RMhPjLvwHaFc?pid=ImgDet&rs=1">
+        <h1>Thyroid    Disease   Prediction</h1>
+    </div>
+    <div class="Prediction">
+        <form class="form1" action="/predict" method="POST">
+            <div class="form">
+                <label>Sex</label>
+                <select name="sex" placeholder="Enter Gender" required>
+                    <option value="M">
+                        Male
+                    </option>
+                    <option value="F">
+                        Female
+                    </option>    
+                </select>
+            </div>
+            <div class="form">
+                <label>On Thyroxine</label>
+                <select name="On_thyroxine" placeholder="Wether on Thyroxine" required>
+                    <option value="f">
+                        False
+                    </option>
+                    <option value="t">
+                        True
+                    </option>    
+                </select>
+            </div>
+            <div class="form">
+                <label>Querry Thyroxine</label>
+                <select name="QThroxine" placeholder="Wether having thyroxine" required>
+                    <option value="f">
+                        False
+                    </option>
+                    <option value="t">
+                        True
+                    </option>    
+                </select>
+            </div>
+            <div class="form">
+                <label>Medication</label>
+                <select name="medication" placeholder="Wether on medication" required>
+                    <option value="f">
+                        False
+                    </option>
+                    <option value="m">
+                        True
+                    </option>    
+                </select>
+            </div>
+            <div class="form">
+                <label>Sick</label>
+                <select name="sick" placeholder="Wether having sickness" required>
+                    <option value="f">
+                        False
+                    </option>
+                    <option value="t">
+                        True
+                    </option>    
+                </select>
+            </div>
+            <div class="form">
+                <label>Pregnant</label>
+                <select name="pregnant" placeholder="Enter if pregnant(Female)" required>
+                    <option value="f">
+                        False
+                    </option>
+                    <option value="t">
+                        True
+                    </option>    
+                </select>
+            </div>
+            <div class="form">
+                <label>Surgery</label>
+                <select name="surgery" placeholder="Wether undergone surgery" required>
+                    <option value="f">
+                        False
+                    </option>
+                    <option value="t">
+                        True
+                    </option>    
+                </select>
+            </div>
+            <div class="form">
+                <label>I131 Treatment</label>
+                <select name="I131_treatment" placeholder="Wether under treatment" required>
+                    <option value="f">
+                        False
+                    </option>
+                    <option value="t">
+                        True
+                    </option>    
+                </select>
+            </div>
+            <div class="form">
+                <label>Querry Hypothyroid</label>
+                <select name="Qhypo" placeholder="Wether diagnosed hypothyroid" required>
+                    <option value="f">
+                        False
+                    </option>
+                    <option value="t">
+                        True
+                    </option>    
+                </select>
+            </div>
+            <div class="form">
+                <label>Querry HyperThyroid</label>
+                <select name="Qhyper" placeholder="Wether diagnosed hyperthyroid" required>
+                    <option value="f">
+                        False
+                    </option>
+                    <option value="t">
+                        True
+                    </option>    
+                </select>
+            </div>
+            <div class="form">
+                <label>Lithium</label>
+                <select name="Lithium" placeholder="Diagnosed lithium imbalance?" required>
+                    <option value="f">
+                        False
+                    </option>
+                    <option value="t">
+                        True
+                    </option>    
+                </select>
+            </div>
+            <div class="form">
+                <label>Goitre</label>
+                <select name="Goitre" placeholder="Diagnosed Goitre?" required>
+                    <option value="f">
+                        False
+                    </option>
+                    <option value="t">
+                        True
+                    </option>    
+                </select>
+            </div>
+            <div class="form">
+                <label>Tumor</label>
+                <select name="Tumor" placeholder="Diagnosed Tumor?" required>
+                    <option value="f">
+                        False
+                    </option>
+                    <option value="t">
+                        True
+                    </option>    
+                </select>
+            </div>
+            <div class="form">
+                <label>Hypopitutary</label>
+                <select name="Hypopitutary" placeholder="Hypopitutarism Condition?" required>
+                    <option value="f">
+                        False
+                    </option>
+                    <option value="t">
+                        True
+                    </option>    
+                </select>
+            </div>
+            <div class="form">
+                <label>Pschological</label>
+                <select name="psch" placeholder="Pyschologically induced?" required>
+                    <option value="f">
+                        False
+                    </option>
+                    <option value="t">
+                        True
+                    </option>    
+                </select>
+            </div>
+            <div class="form">
+                <label>TSH measured</label>
+                <select name="TSH_BOOL" placeholder="Wether TSH measured?" required>
+                    <option value="f">
+                        False
+                    </option>
+                    <option value="t">
+                        True
+                    </option>    
+                </select>
+            </div>
+            <div class="form">
+                <label>T3 measured</label>
+                <select name="T3_BOOL" placeholder="Wether T3 measured?" required>
+                    <option value="f">
+                        False
+                    </option>
+                    <option value="t">
+                        True
+                    </option>    
+                </select>
+            </div>  
+            <div class="form">
+                <label>TT4 measured</label>
+                <select name="TT4_BOOL" placeholder="Wether TT4 measured?" required>
+                    <option value="f">
+                        False
+                    </option>
+                    <option value="t">
+                        True
+                    </option>    
+                </select>
+            </div> 
+            <div class="form">
+                <label>T4U measured</label>
+                <select name="T4U_BOOL" placeholder="Wether T4U measured?" required>
+                    <option value="f">
+                        False
+                    </option>
+                    <option value="t">
+                        True
+                    </option>    
+                </select>
+            </div> 
+            <div class="form">
+                <label>FTI measured</label>
+                <select name="FTI_BOOL" placeholder="Wether FTI measured?" required>
+                    <option value="f">
+                        False
+                    </option>
+                    <option value="t">
+                        True
+                    </option>    
+                </select>
+            </div> 
+            <div class="form">
+                <label>TBG measured</label>
+                <select name="TBG_BOOL" placeholder="Wether TBG measured?" required>
+                    <option value="f">
+                        False
+                    </option>
+                    <option value="t">
+                        True
+                    </option>    
+                </select>
+            </div> 
+            <div class="form">
+                <label>Source Data</label>
+                <select name="source" placeholder="Region specific" required>
+                    <option value="STMW">
+                        STMW
+                    </option>
+                    <option value="SVI">
+                        SVI
+                    </option>
+                    <option value="SVHD">
+                        SVHD
+                    </option> 
+                    <option value="SVHC">
+                        SVHC
+                    </option> 
+                    <option value="other">
+                        other
+                    </option>     
+                </select>
+            </div>
+            <div class="form">
+                <label>Age</label>
+                <input type="text" name="age" placeholder="enter age" required/>        
+            </div>
+            <div class="form">
+                <label>TSH</label>
+                <input type="text" name="TSH" placeholder="Enter value for TSH" required/>        
+            </div>
+            <div class="form">
+                <label>T3</label>
+                <input type="text" name="T3" placeholder="Enter value for T3" required/>        
+            </div>
+            <div class="form">
+                <label>TT4</label>
+                <input type="text" name="TT4" placeholder="Enter value for TT4" required/>        
+            </div>
+            <div class="form">
+                <label>T4U</label>
+                <input type="text" name="T4U" placeholder="Enter value for T4U" required/>        
+            </div>
+            <div class="form">
+                <label>FTI</label>
+                <input type="text" name="FTI" placeholder="Enter value for FTI" required/>        
+            </div>
+            <div class="form">
+                <label>TBG</label>
+                <input type="text" name="TBG" placeholder="Enter value for TBG" required/>        
+            </div>
+            <div class="form">
+                <label>PREDICT</label>
+                <input  class="button" type="submit" value="Predict" required>
+            </div>
+        </form>   
+        <div class="result">
+            {% if context['INPUT_DATA'] %}
+            <table class="table">
+                <tr>
+                    <th>Input Fetures</th>
+                    <th>Values</th>
+                </tr> 
+                {% for key,value in context['INPUT_DATA'].items() %}
+                <tr>
+                    <td>{{key}}</td>
+                    <td>{{value[0]}}</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td>Condition Prediction:</td>
+                    <td>{{context['RESULT']}}</td>
+                </tr>
+            </table>
+            {% else %}
+                <p>{{pass}}</p>
+            {% endif %}    
+        </div>        
+    </div>           
+</body>
+</html>

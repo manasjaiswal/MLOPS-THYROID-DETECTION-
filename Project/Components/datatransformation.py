@@ -26,9 +26,10 @@ class NumTransformer(BaseEstimator,TransformerMixin):
         try:
             dataset=pd.DataFrame(X,columns=self.columns)
             for feature in self.numerical_columns:
-                dataset[feature]=dataset[feature].astype('float32')
+                dataset[feature]=dataset[feature].astype('float')
                 dataset[feature]=dataset[feature].fillna(np.mean(dataset[feature]))
-            dataset.dropna(thresh=len(dataset)-3,inplace=True,axis=1)    
+            #dataset.dropna(thresh=round(len(dataset)*0.9),inplace=True,axis=1)
+            dataset.drop(columns=COLUMN_NUM_TBG,inplace=True)    
             return dataset
         except Exception as e:
             raise ThyroidException(e,sys) from e            

@@ -81,7 +81,7 @@ def evaluate_classification_model(model_list:List[object],X_train:np.ndarray,y_t
             logging.info(f"{':'*20}Starting evaluating Model:[{type(model).__name__}]{':'*20}")
             y_train_pred=model.predict(X_train)
             y_test_pred=model.predict(X_test)
-
+            
             confusion_matrix_train=confusion_matrix(y_true=y_train,y_pred=y_train_pred)
             confusion_matrix_test=confusion_matrix(y_true=y_test,y_pred=y_test_pred)
             #For multiclassification we want to know about the classes 
